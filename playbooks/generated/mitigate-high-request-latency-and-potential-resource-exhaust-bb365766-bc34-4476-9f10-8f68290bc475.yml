@@ -1,0 +1,28 @@
+---
+- name: Project AI Ops governed scale remediation
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Scale approved deployment
+      ansible.builtin.command:
+        argv:
+          - oc
+          - scale
+          - deployment/{{ workload_name }}
+          - --replicas={{ desired_replicas }}
+          - -n
+          - "{{ namespace }}"
+      changed_when: true
+
+    - name: Wait for approved deployment rollout
+      ansible.builtin.command:
+        argv:
+          - oc
+          - rollout
+          - status
+          - deployment/{{ workload_name }}
+          - -n
+          - "{{ namespace }}"
+          - --timeout=180s
+      changed_when: false

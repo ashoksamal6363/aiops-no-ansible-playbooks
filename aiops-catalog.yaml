@@ -1,0 +1,13 @@
+playbooks:
+- id: generated-bb365766-bc34-4476-9f10-8f68290bc475
+  playbook: playbooks/generated/mitigate-high-request-latency-and-potential-resource-exhaust-bb365766-bc34-4476-9f10-8f68290bc475.yml
+  purpose: Mitigate high request latency and potential resource exhaustion
+  risk: low
+  actions:
+  - scale_workload
+  resource_kinds:
+  - Deployment
+  generated_sha256: 835caa302086ab39877e79df38e0349ee12ab504c0c45427df09ecd1e338a3bb
+  human_approved: true
+  execution_verified: true
+  originating_incident: bb365766-bc34-4476-9f10-8f68290bc475
