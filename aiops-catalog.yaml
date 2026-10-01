@@ -11,3 +11,15 @@ playbooks:
   human_approved: true
   execution_verified: true
   originating_incident: bb365766-bc34-4476-9f10-8f68290bc475
+- id: generated-3c0c7ea9-4307-49fb-a092-0e1047faaae0
+  playbook: playbooks/generated/to-address-the-impending-certificate-expiry-issue-and-restor-3c0c7ea9-4307-49fb-a092-0e1047faaae0.yml
+  purpose: To address the impending certificate expiry issue and restore service availability.
+  risk: medium
+  actions:
+  - restart_workload
+  resource_kinds:
+  - Deployment
+  generated_sha256: cf0e43ae1ea07964e1a06ffed6d013379950bd3c5d52b60edd7bdeca9f42b720
+  human_approved: true
+  execution_verified: true
+  originating_incident: 3c0c7ea9-4307-49fb-a092-0e1047faaae0
