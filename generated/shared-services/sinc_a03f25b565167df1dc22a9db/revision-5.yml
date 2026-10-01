@@ -1,0 +1,19 @@
+- name: Collect host diagnostics for human investigation
+  hosts: '{{ target_hosts | default(''localhost'', true) }}'
+  gather_facts: false
+  tasks:
+  - name: Require an explicitly selected target
+    ansible.builtin.assert:
+      that:
+      - target_hosts is defined
+      - target_hosts is not none
+      - target_hosts | string | length > 0
+      - target_hosts != 'all'
+      fail_msg: Set target_hosts to the approved service host or inventory group.
+  - name: Read host resource facts without changing the host
+    ansible.builtin.setup:
+      filter:
+      - ansible_memtotal_mb
+      - ansible_memfree_mb
+      - ansible_mounts
+      - ansible_processor_vcpus
