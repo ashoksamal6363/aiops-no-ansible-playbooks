@@ -1,0 +1,11 @@
+{
+  "revision_id": "5533b3fd951043429087d485eb3ee700",
+  "sha256": "ad7a7d04f8799efc8aecdf2aa930d79f62b3ff80d65e34b688d8ad459cb7b423",
+  "variables": {
+    "target_hosts": null
+  },
+  "accepted_by": "ashoksamal63@gmail.com",
+  "accepted_at": 1790851497.3064923,
+  "rationale": "The model did not identify a supported executable repair from the recorded evidence. This read-only diagnostic proposal requires an operator-selected target and does not repair the service.",
+  "risk": "low"
+}
